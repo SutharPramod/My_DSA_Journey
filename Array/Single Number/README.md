@@ -30,4 +30,5 @@ You must implement a solution with a linear runtime complexity and use only cons
 * `-3 * 10^4 <= nums[i] <= 3 * 10^4`
 * Each element in the array appears twice except for one element which appears only once.
 
-![Single Number](Assets\Single_Number.png)
+# My Solution
+![Single Number](/Assets/Single_Number.png)
