@@ -1,0 +1,58 @@
+# Book Allocation Problem
+
+## 📝 Problem Description
+You are given `n` books, where the $i^{th}$ book has `pages[i]` number of pages. You are also given `m` students.
+
+The books are arranged in **ascending order** of their pages (or a given sequence). You have to allocate books to `m` students such that:
+1. Each student gets at least one book.
+2. Each book is allocated to exactly one student.
+3. **The allocation must be contiguous.**
+4. The **maximum number of pages assigned to a student is minimized**.
+
+Return the minimum possible value of this maximum sum. If it is not possible to assign books (e.g., more students than books), return `-1`.
+
+
+
+---
+
+## 💡 Examples
+
+**Example 1:**
+> **Input:** `pages = [12, 34, 67, 90]`, `m = 2`  
+> **Output:** `113`  
+> **Explanation:** > Possible allocations:
+> - [12] and [34, 67, 90] → Max = 191
+> - [12, 34] and [67, 90] → Max = 157
+> - [12, 34, 67] and [90] → Max = 113
+> The minimum of these maximums is **113**.
+
+**Example 2:**
+> **Input:** `pages = [5, 17, 100, 11]`, `m = 4`  
+> **Output:** `100`
+
+---
+
+## ⚙️ Constraints
+* `1 <= n <= 10^5`
+* `1 <= pages[i] <= 10^9`
+* `1 <= m <= 10^5`
+
+---
+
+## 🧠 Strategy: Binary Search on Answer
+Since the search space for the "number of pages" is sorted ($min$ possible pages to $max$ possible sum), we can use Binary Search.
+
+1.  **Low**: `max(pages)` (A student must be able to carry at least the largest book).
+2.  **High**: `sum(pages)` (One student carries all books).
+3.  **Mid**: The potential "limit" we test.
+4.  **Feasibility Check**: Create a helper function `isPossible(mid)` that checks if we can assign books to `m` students without any student exceeding `mid` pages.
+
+
+
+---
+
+## 📊 Complexity Analysis
+| Metric | Complexity | Description |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(n \cdot \log(\text{sum of pages}))$ | $n$ for the check function, $\log$ for the range. |
+| **Space Complexity** | $O(1)$ | No extra space used besides variables. |
