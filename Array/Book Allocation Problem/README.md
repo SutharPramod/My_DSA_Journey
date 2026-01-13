@@ -38,21 +38,3 @@ Return the minimum possible value of this maximum sum. If it is not possible to 
 * `1 <= m <= 10^5`
 
 ---
-
-## 🧠 Strategy: Binary Search on Answer
-Since the search space for the "number of pages" is sorted ($min$ possible pages to $max$ possible sum), we can use Binary Search.
-
-1.  **Low**: `max(pages)` (A student must be able to carry at least the largest book).
-2.  **High**: `sum(pages)` (One student carries all books).
-3.  **Mid**: The potential "limit" we test.
-4.  **Feasibility Check**: Create a helper function `isPossible(mid)` that checks if we can assign books to `m` students without any student exceeding `mid` pages.
-
-
-
----
-
-## 📊 Complexity Analysis
-| Metric | Complexity | Description |
-| :--- | :--- | :--- |
-| **Time Complexity** | $O(n \cdot \log(\text{sum of pages}))$ | $n$ for the check function, $\log$ for the range. |
-| **Space Complexity** | $O(1)$ | No extra space used besides variables. |
