@@ -7,7 +7,7 @@ A robust, efficient C++ implementation of the **Stack** data structure using a f
 ---
 
 ## 🚀 Overview
-The **Stack** is a linear data structure that serves as a collection of elements. It is widely used in system memory management, expression parsing, and backtracking algorithms.
+The **Stack** is a linear data structure that serves as a collection of elements. It is widely used in system memory management, expression parsing, and backtracking algorithm.
 
 ### Key Features
 * **LIFO Logic**: The last element added is the first one removed.
