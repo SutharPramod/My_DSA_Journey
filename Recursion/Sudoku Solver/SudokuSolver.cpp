@@ -12,6 +12,7 @@ bool isPossible(vector<vector<char>>& board,int row,int col,int n,char dig){
         //its owm square
         if(board[3 * (row/3) + i / 3][3 * (col/3) + i % 3] == dig) return false;
     }
+    return true;
 }
 bool solve(vector<vector<char>>& board,int row,int col,int n){
     if(row == n){
